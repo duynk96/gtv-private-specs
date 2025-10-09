@@ -8,13 +8,13 @@ Pod::Spec.new do |s|
     s.homepage         = 'https://github.com/duynk96/gtv-private-specs'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'duynk96' => 'duynk@gtv.vn' }
-    s.source           = { :git => 'https://github.com/duynk96/gtv-private-specs', :tag => s.version.to_s }
+    s.source           = { :git => 'https://github.com/duynk96/gtv-private-specs.git', :tag => s.version.to_s }
 
     
     s.ios.deployment_target = '15.0'
     s.swift_versions   = ['5.0', '5.5', '5.9']
     
-    s.static_framework = true
+    s.static_framework = false
 
     s.vendored_frameworks = 'GTVSdkIos.xcframework'
     # Dependencies (Firebase sẽ tự thêm resource bundle của nó)
