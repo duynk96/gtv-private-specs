@@ -2377,15 +2377,15 @@
       "filePath": "\/Users\/hoangtran\/Desktop\/ios-sdk\/GTVSdkIos\/GTVSdkIos\/Sources\/Core\/SessionManager.swift",
       "kind": "StringLiteral",
       "offset": 495,
-      "length": 14,
-      "value": "\"user_role_id\""
+      "length": 16,
+      "value": "\"user_role_name\""
     },
     {
       "filePath": "\/Users\/hoangtran\/Desktop\/ios-sdk\/GTVSdkIos\/GTVSdkIos\/Sources\/Core\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 544,
-      "length": 14,
-      "value": "\"user_area_id\""
+      "offset": 546,
+      "length": 16,
+      "value": "\"user_area_name\""
     },
     {
       "filePath": "\/Users\/hoangtran\/Desktop\/ios-sdk\/GTVSdkIos\/GTVSdkIos\/Sources\/ViewController\/NewsEventCell.swift",
@@ -2754,7 +2754,7 @@
     {
       "filePath": "\/Users\/hoangtran\/Desktop\/ios-sdk\/GTVSdkIos\/GTVSdkIos\/Sources\/Core\/GTVSdk.swift",
       "kind": "IntegerLiteral",
-      "offset": 12384,
+      "offset": 12405,
       "length": 2,
       "value": "60"
     },
