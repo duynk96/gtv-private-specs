@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'GTVSdk'
-    s.version          = '1.0.8'
+    s.version          = '1.0.9'
     s.summary          = 'GTV SDK cho iOS'
     s.description      = <<-DESC
     SDK hỗ trợ login, notification, tracking và quảng cáo cho ứng dụng iOS.
@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
         
         # Resource bundle riêng cho SDK
         # full.resource_bundles = {
-        #    'GTVSdkResources' => ['Resources/**/*.{png,jpg,json,xib,storyboard}']
+        #   'GTVSdkResources' => ['Resources/**/*.{png,jpg,json,xib,storyboard}']
         # }
         
         full.vendored_frameworks = 'FrameworkFull/GTVSdkIos.xcframework'
