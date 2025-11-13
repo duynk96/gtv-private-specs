@@ -5,9 +5,11 @@
 import Airbridge
 import CoreTelephony
 import CryptoKit
+import FirebaseAnalytics
 import FirebaseCore
 import FirebaseMessaging
 import Foundation
+import GoogleMobileAds
 import PhotosUI
 import StoreKit
 import Swift
@@ -17,6 +19,16 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class GTVAdmobManager : ObjectiveC.NSObject {
+  @objc public static let shared: GTVSdkIos.GTVAdmobManager
+  @objc public func initAdmob(admobID: Swift.String)
+  @objc public func showRewarded(from viewController: UIKit.UIViewController)
+  @objc deinit
+}
+extension GTVSdkIos.GTVAdmobManager : GoogleMobileAds.FullScreenContentDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func adDidDismissFullScreenContent(_ ad: any GoogleMobileAds.FullScreenPresentingAd)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func ad(_ ad: any GoogleMobileAds.FullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: any Swift.Error)
+}
 public protocol GTVSdkListener : AnyObject {
   #if compiler(>=5.3) && $NonescapableTypes
   func onEventReceived(event: Swift.String, data: Any?)
@@ -58,7 +70,7 @@ public enum GTVEvents {
   public func purchaseProduct(productId: Swift.String, CPOrder: Swift.String = "", completion: @escaping ([Swift.String : Any]?) -> Swift.Void)
   #endif
   public func restorePurchases()
-  public func showFloatingButton(size: CoreFoundation.CGFloat = 60)
+  public func showFloatingButton(size: CoreFoundation.CGFloat = 36.0)
   public func hideFloatingButton()
   public func showWarningButton(origin: CoreFoundation.CGPoint)
   public func hideWarningButton()
