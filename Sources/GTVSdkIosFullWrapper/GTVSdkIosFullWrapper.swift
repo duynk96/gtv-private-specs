@@ -1,7 +1,12 @@
-//
-//  GTVSdkIosFullWrapper.swift
-//  gtv-private-specs
-//
-//  Created by Hoang Tran on 13/11/25.
-//
+import Foundation
+import GTVSdkIosFull
+import FirebaseMessaging
+import FirebaseAnalytics
+import GoogleMobileAds
+import Airbridge
 
+/// Wrapper target cho Full binary + dependencies.
+/// Chỉ để SPM link các dependency đúng cách.
+public final class GTVSdkIosFullWrapper {
+    private init() {}
+}

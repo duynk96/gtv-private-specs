@@ -1,7 +1,11 @@
-//
-//  GTVSdkIosCoreWrapper.swift
-//  gtv-private-specs
-//
-//  Created by Hoang Tran on 13/11/25.
-//
+import Foundation
+import GTVSdkIosCore
+import FirebaseMessaging
+import FirebaseAnalytics
+import Airbridge
 
+/// Wrapper target cho Core binary + dependencies.
+/// Chỉ để SPM link các dependency đúng cách.
+public final class GTVSdkIosCoreWrapper {
+    private init() {}
+}
