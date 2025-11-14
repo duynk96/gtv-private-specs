@@ -2,16 +2,16 @@
 import PackageDescription
 
 let package = Package(
-    name: "GTVPrivateSpecs",
+    name: "GTVSdkIos",
     platforms: [.iOS(.v15)],
     products: [
+        // Export wrapper — app host chỉ import wrapper
         .library(name: "GTVSdkIosCore", targets: ["GTVSdkIosCoreWrapper"]),
         .library(name: "GTVSdkIosFull", targets: ["GTVSdkIosFullWrapper"])
     ],
     dependencies: [
        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", exact: "12.3.0"),
-       .package(url: "https://github.com/airbridge/airbridge-ios-sdk.git", exact: "4.8.1"),
-       // .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "12.11.0")
+       // .package(url: "https://github.com/airbridge/airbridge-ios-sdk.git", from: "4.8.1"),
     ],
     targets: [
         // MARK: Core Binary
@@ -24,11 +24,11 @@ let package = Package(
         .target(
             name: "GTVSdkIosCoreWrapper",
             dependencies: [
-                "GTVSdkIosCore",
-                .product(name: "FirebaseMessaging",  package: "firebase-ios-sdk"),
-                .product(name: "FirebaseAnalytics",  package: "firebase-ios-sdk"),
-                .product(name: "Airbridge", package: "Airbridge")
-            ],
+                "GTVSdkIosCore", // match binary target
+                .product(name: "FirebaseMessaging", package: "firebase-ios-sdk"),
+                .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
+                // .product(name: "Airbridge", package: "airbridge-ios-sdk")
+            ]
             path: "Sources/GTVSdkIosCoreWrapper"
         ),
 
@@ -42,10 +42,9 @@ let package = Package(
         .target(
             name: "GTVSdkIosFullWrapper",
             dependencies: [
-                "GTVSdkIosFull",
+                "GTVSdkIosFull"
             ],
             path: "Sources/GTVSdkIosFullWrapper"
         )
     ]
 )
-
