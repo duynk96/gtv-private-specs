@@ -22,9 +22,9 @@ let package = Package(
 
         // MARK: Core Wrapper
         .target(
-            name: "GTVSdkIosCore",
+            name: "GTVSdkIosCoreWrapper",
             dependencies: [
-                "GTVSdkIosCoreWrapper", // match binary target
+                "GTVSdkIosCore", // match binary target
                 .product(name: "FirebaseMessaging", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
                 .product(name: "Airbridge", package: "airbridge-ios-sdk")
