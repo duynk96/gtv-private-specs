@@ -8,13 +8,15 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "GTVSdkIosCore",
+            name: "GTVSdkIos",
             targets: ["GTVSdkIosCoreWrapper"]
         ),
+        /*
         .library(
             name: "GTVSdkIosFull",
             targets: ["GTVSdkIosFullWrapper"]
         )
+         */
     ],
     dependencies: [
         .package(
@@ -34,7 +36,7 @@ let package = Package(
 
         // MARK: - Core Binary
         .binaryTarget(
-            name: "GTVSdkIosCore",
+            name: "GTVSdkIos",
             path: "GTVSdkIos.xcframework"
         ),
 
@@ -42,7 +44,7 @@ let package = Package(
         .target(
             name: "GTVSdkIosCoreWrapper",
             dependencies: [
-                "GTVSdkIosCore",
+                "GTVSdkIos",
                 .product(name: "FirebaseMessaging", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
                 .product(name: "Airbridge", package: "airbridge-ios-sdk-deployment"),
@@ -51,6 +53,7 @@ let package = Package(
             path: "Sources/GTVSdkIosCoreWrapper"
         ),
 
+        /*
         // MARK: - Full Binary
         .binaryTarget(
             name: "GTVSdkIosFull",
@@ -58,6 +61,7 @@ let package = Package(
         ),
 
         // MARK: - Full Wrapper
+
         .target(
             name: "GTVSdkIosFullWrapper",
             dependencies: [
@@ -69,6 +73,7 @@ let package = Package(
             ],
             path: "Sources/GTVSdkIosFullWrapper"
         )
+         */
     ]
 )
 

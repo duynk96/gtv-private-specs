@@ -1,5 +1,5 @@
 import Foundation
-import GTVSdkIosCore
+import GTVSdkIos
 import FirebaseMessaging
 import FirebaseAnalytics
 import Airbridge
