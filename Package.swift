@@ -5,21 +5,23 @@ let package = Package(
     name: "GTVSdkIos",
     platforms: [.iOS(.v15)],
     products: [
+        // Export wrapper — app host chỉ import wrapper
         .library(name: "GTVSdkIosCore", targets: ["GTVSdkIosCoreWrapper"]),
         .library(name: "GTVSdkIosFull", targets: ["GTVSdkIosFullWrapper"])
     ],
     dependencies: [
-        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", from: "12.3.0"),
+        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", exact: "12.3.0"),
         .package(url: "https://github.com/airbridge/airbridge-ios-sdk.git", from: "4.8.1"),
-        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", from: "12.11.0")
+        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "12.11.0")
     ],
     targets: [
-        // Core binary target
+        // MARK: Core Binary
         .binaryTarget(
             name: "GTVSdkIosCore",
             path: "GTVSdkIos.xcframework"
         ),
-        // Core wrapper target
+
+        // MARK: Core Wrapper
         .target(
             name: "GTVSdkIosCoreWrapper",
             dependencies: [
@@ -30,12 +32,14 @@ let package = Package(
             ],
             path: "Sources/GTVSdkIosCoreWrapper"
         ),
-        // Full binary target
+
+        // MARK: Full Binary
         .binaryTarget(
             name: "GTVSdkIosFull",
             path: "FrameworkFull/GTVSdkIos.xcframework"
         ),
-        // Full wrapper target
+
+        // MARK: Full Wrapper
         .target(
             name: "GTVSdkIosFullWrapper",
             dependencies: [
@@ -49,3 +53,4 @@ let package = Package(
         )
     ]
 )
+
