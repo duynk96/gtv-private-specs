@@ -9,8 +9,8 @@ let package = Package(
         .library(name: "GTVSdkIosFull", targets: ["GTVSdkIosFullWrapper"])
     ],
     dependencies: [
-       .package(url: "https://github.com/firebase/firebase-ios-sdk.git", exact: "12.3.0"),
-       .package(url: "https://github.com/airbridge/airbridge-ios-sdk.git", from: "4.8.1"),
+       .package(name: "Firebase", url: "https://github.com/firebase/firebase-ios-sdk.git", exact: "12.3.0"),
+       .package(name: "Airbridge", url: "https://github.com/airbridge/airbridge-ios-sdk.git", from: "4.8.1"),
        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "12.11.0")
     ],
     targets: [
@@ -25,9 +25,9 @@ let package = Package(
             name: "GTVSdkIosCoreWrapper",
             dependencies: [
                 "GTVSdkIosCore",
-                .product(name: "FirebaseMessaging", package: "firebase-ios-sdk"),
-                .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
-                .product(name: "Airbridge", package: "airbridge-ios-sdk")
+                .product(name: "FirebaseMessaging", package: "Firebase"),
+                .product(name: "FirebaseAnalytics", package: "Firebase"),
+                .product(name: "Airbridge", package: "Airbridge")
             ],
             path: "Sources/GTVSdkIosCoreWrapper"
         ),
