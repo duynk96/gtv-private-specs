@@ -1,5 +1,5 @@
 import Foundation
-import GTVSdkIos
+import GTVSdkIosFull
 import FirebaseMessaging
 import FirebaseAnalytics
 import GoogleMobileAds
