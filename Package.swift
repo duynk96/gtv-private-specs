@@ -10,7 +10,8 @@ let package = Package(
         .library(name: "GTVSdkIosFull", targets: ["GTVSdkIosFullWrapper"])
     ],
     dependencies: [
-        // ❌ Không còn dependencies ngoài
+       .package(url: "https://github.com/firebase/firebase-ios-sdk.git", exact: "12.3.0"),
+       .package(url: "https://github.com/airbridge/airbridge-ios-sdk.git", from: "4.8.1"),
     ],
     targets: [
         // MARK: Core Binary
