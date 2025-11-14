@@ -10,7 +10,7 @@
 		</data>
 		<key>Modules/GTVSdkIos.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		r3VAeCypmkjZeRk40LBMxbfJODw=
+		62/FLqc2Mge8P+qI8mD7CKIUWUo=
 		</data>
 		<key>Modules/GTVSdkIos.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/GTVSdkIos.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		r3VAeCypmkjZeRk40LBMxbfJODw=
+		62/FLqc2Mge8P+qI8mD7CKIUWUo=
 		</data>
 		<key>Modules/GTVSdkIos.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -83,7 +83,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			r69sOc/E+JValOW3u0jRqoJD4og5fFo7qmDwO6utsck=
+			0Dd/XuYw5DRHAjBxt0jtj+klAIMdxHuvVC6LgNYUNU0=
 			</data>
 		</dict>
 		<key>Modules/GTVSdkIos.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -118,7 +118,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			r69sOc/E+JValOW3u0jRqoJD4og5fFo7qmDwO6utsck=
+			0Dd/XuYw5DRHAjBxt0jtj+klAIMdxHuvVC6LgNYUNU0=
 			</data>
 		</dict>
 		<key>Modules/GTVSdkIos.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
