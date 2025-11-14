@@ -1,4 +1,4 @@
-// swift-tools-version: 5.9
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
@@ -6,8 +6,8 @@ let package = Package(
     platforms: [.iOS(.v15)],
     products: [
         // Export wrapper — app host chỉ import wrapper
-        .library(name: "GTVSdkIos", targets: ["GTVSdkIosCoreWrapper"]),
-        .library(name: "GTVSdkIos", targets: ["GTVSdkIosFullWrapper"])
+        .library(name: "GTVSdkIosCore", targets: ["GTVSdkIosCoreWrapper"]),
+        .library(name: "GTVSdkIosFull", targets: ["GTVSdkIosFullWrapper"])
     ],
     dependencies: [
         .package(url: "https://github.com/firebase/firebase-ios-sdk.git", exact: "12.3.0"),
@@ -17,7 +17,7 @@ let package = Package(
     targets: [
         // MARK: Core Binary
         .binaryTarget(
-            name: "GTVSdkIos",
+            name: "GTVSdkIosCore",
             path: "GTVSdkIos.xcframework"
         ),
 
@@ -25,7 +25,7 @@ let package = Package(
         .target(
             name: "GTVSdkIosCoreWrapper",
             dependencies: [
-                "GTVSdkIos",
+                "GTVSdkIosCore",
                 .product(name: "FirebaseMessaging", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
                 .product(name: "Airbridge", package: "airbridge-ios-sdk")
@@ -35,7 +35,7 @@ let package = Package(
 
         // MARK: Full Binary
         .binaryTarget(
-            name: "GTVSdkIos",
+            name: "GTVSdkIosFull",
             path: "FrameworkFull/GTVSdkIos.xcframework"
         ),
 
@@ -43,7 +43,7 @@ let package = Package(
         .target(
             name: "GTVSdkIosFullWrapper",
             dependencies: [
-                "GTVSdkIos",
+                "GTVSdkIosFull",
                 .product(name: "FirebaseMessaging", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
                 .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads"),
@@ -53,3 +53,4 @@ let package = Package(
         )
     ]
 )
+
